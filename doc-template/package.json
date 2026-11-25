@@ -1,0 +1,16 @@
+{
+  "name": "@btld/utils-doc-template",
+  "license": "UNLICENSED",
+  "type": "module",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "./layout.astro": "./layout.astro",
+    "./favicon.svg": "./favicon.svg"
+  },
+  "peerDependencies": {
+    "astro": ">=5.7.0"
+  }
+}
