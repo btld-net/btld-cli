@@ -1,0 +1,9 @@
+{
+  "name": "@btld/utils-doc-build",
+  "license": "UNLICENSED",
+  "type": "module",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  }
+}
