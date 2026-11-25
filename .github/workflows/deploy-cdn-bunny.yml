@@ -16,7 +16,7 @@ jobs:
   deploy:
     runs-on: ubuntu-26.04
     timeout-minutes: 10
-    concurrency: # Serialize deploys (`remove: true` syncs can't race), never cancel mid-upload
+    concurrency: # Serialize deploys (prevent race), never cancel mid-upload
       group: deploy-${{ github.repository }}
       cancel-in-progress: false
     steps:
@@ -32,18 +32,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run build-docs
+      - name: Build site for cdn
+        run: npm run build-cdn
 
       - name: Deploy to BunnyCDN
         uses: ayeressian/bunnycdn-storage-deploy@v2.4.6
         with:
           source: "dist"
           destination: ""
+          pullZoneId: ${{ secrets.BUNNY_ZONE_ID }}
           storageZoneName: ${{ secrets.BUNNY_ZONE_NAME }}
           storagePassword: ${{ secrets.BUNNY_PW_SITE }}
           accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: ${{ secrets.BUNNY_ZONE_ID }}
           upload: "true"
           remove: "true"
           purgePullZone: "true"
