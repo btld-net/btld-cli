@@ -1,5 +1,4 @@
-name: Deploy docs site
-
+name: Deploy site to cdn
 on:
   workflow_call:
     secrets:
@@ -11,13 +10,12 @@ on:
         required: true
       BUNNY_ZONE_ID:
         required: true
-
 jobs:
   deploy:
     runs-on: ubuntu-26.04
     timeout-minutes: 10
     concurrency: # Serialize deploys (prevent race), never cancel mid-upload
-      group: deploy-${{ github.repository }}
+      group: deploy-cdn-${{ github.repository }}
       cancel-in-progress: false
     steps:
       - name: Checkout
