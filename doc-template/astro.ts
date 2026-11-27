@@ -18,7 +18,7 @@ export interface BaseDocConfigOptions {
 
 export function createBaseDocConfig(options: BaseDocConfigOptions): AstroUserConfig {
   const defaultFavicon = fileURLToPath(import.meta.resolve('@btld/utils-doc-template/favicon.svg'));
-
+  
   return {
     srcDir: 'docs',
     output: 'static',
