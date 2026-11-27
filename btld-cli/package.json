@@ -1,5 +1,5 @@
 {
-  "name": "@btld/utils-doc-build",
+  "name": "btld-cli",
   "license": "UNLICENSED",
   "type": "module",
   "version": "0.0.1",

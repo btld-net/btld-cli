@@ -1,0 +1,12 @@
+{
+  "name": "@btld/utils-doc-build",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "btld-cli",
+    "doc-template"
+  ],
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
